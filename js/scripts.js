@@ -70,4 +70,19 @@ document.querySelector('.before').addEventListener("click" , function(){
         bigImg.src = images[active].image;
         titleScroll.innerHTML = images[active].title;
         textScroll.innerHTML = images[active].text;
-    }); 
+    });
+
+    // SetInterval
+    setInterval(function(){
+        img[active].classList.remove(`d-block`);
+        if(active == img.length-1){
+            active = 0;
+        }
+        else{
+            active++;
+            }
+        img[active].classList.add('d-block');
+        bigImg.src = images[active].image;
+        titleScroll.innerHTML = images[active].title;
+        textScroll.innerHTML = images[active].text;
+    }, 3000);
