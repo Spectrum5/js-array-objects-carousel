@@ -24,14 +24,14 @@ const images = [
 ];
 
 let items = document.querySelector('.items');
+let bigImg  = document.querySelector(`.big-img img`)
 let active = 0
 images.forEach ((object ) => {
 const template = document.getElementById(`template`).content.cloneNode(true);
 
  template.getElementById(`photo`).src = object.image;
- template.getElementById(`title`).innerHTML = object.title;
- template.getElementById(`text`).innerHTML = object.text;
-
+ //template.getElementById(`title`).innerHTML = object.title;
+ //template.getElementById(`text`).innerHTML = object.text;
 
 
  items.append(template);
@@ -41,6 +41,7 @@ let item = document.querySelector(`.item`);
 item.classList.add(`d-block`);
 
 let img = document.querySelectorAll(`.item`);
+bigImg.src = images[active].image;
 
 document.querySelector('.after').addEventListener("click" , function(){
 
@@ -52,6 +53,7 @@ document.querySelector('.after').addEventListener("click" , function(){
         active++;
         }
     img[active].classList.add('d-block');
+    bigImg.src = images[active].image;
 });
 document.querySelector('.before').addEventListener("click" , function(){
     
@@ -64,4 +66,5 @@ document.querySelector('.before').addEventListener("click" , function(){
             active--;
         }
         img[active].classList.add('d-block');
+        bigImg.src = images[active].image;
     }); 
