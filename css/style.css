@@ -49,8 +49,14 @@ body {
 
 #information {
     color: white;
-    width: 40%;
+    width: 90%;
     position: absolute;
     bottom: 10%;
     right: 5%;
+}
+
+#information  #title{
+    width: 100%;
+    text-align: end;
+    font-size: 30px;
 }
