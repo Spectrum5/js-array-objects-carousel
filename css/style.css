@@ -9,7 +9,6 @@ body {
 .item {
     height: 100%;
     height: calc(100% / 5);
-    /* display: none; */
 }
 
 #photo {
