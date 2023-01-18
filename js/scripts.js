@@ -73,7 +73,7 @@ document.querySelector('.before').addEventListener("click" , function(){
     });
 
     // SetInterval
-    setInterval(function(){
+    function autoplay() {
         img[active].classList.remove(`d-block`);
         if(active == img.length-1){
             active = 0;
@@ -85,4 +85,13 @@ document.querySelector('.before').addEventListener("click" , function(){
         bigImg.src = images[active].image;
         titleScroll.innerHTML = images[active].title;
         textScroll.innerHTML = images[active].text;
-    }, 3000);
+    };
+
+    let play = setInterval(autoplay, 3000);
+
+bigImg.addEventListener(`mouseenter`, function(){
+    clearInterval(play);
+});
+bigImg.addEventListener(`mouseleave`, function(){
+    play = setInterval(autoplay, 3000);
+});
