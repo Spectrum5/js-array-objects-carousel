@@ -42,6 +42,10 @@ body {
     bottom: 0;
 }
 
+.d-block {
+    border: 3px solid white;
+}
+
 #information {
     color: white;
     width: 40%;
